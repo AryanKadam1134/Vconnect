@@ -4,6 +4,8 @@ import LoadingSpinner from "./components/LoadingSpinner";
 import Navbar from "./components/Navbar";
 import SmoothScroll from './components/SmoothScroll';
 import ScrollToTop from './components/ScrollToTop';
+import { Loader } from "lucide-react";
+
 
 // Lazy load components
 const Home = React.lazy(() => import("./components/Home"));
@@ -21,7 +23,7 @@ const App = () => {
       <SmoothScroll>
         <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
           <Navbar />
-          <Suspense fallback={<LoadingSpinner />}>
+          <Suspense fallback={<Loader />}>
             <div className="container mx-auto px-4 py-8">
               <Routes>
                 <Route path="/" element={<Home />} />
